@@ -1,4 +1,4 @@
 <?php
     echo json_encode([
-        'pdfpath' => './resources/githubflow-online.pdf'
+        'path' => './resources/githubflow-online.pdf'
     ]);

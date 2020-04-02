@@ -1,11 +1,11 @@
-$(document).on('click', '#ajax-print', function(){
-    $.get('/getpdfpath.php', (response) => {
+$(document).on('click', '.ajax-print', function(){
+    $.get($(this).data('url'), (response) => {
         response = JSON.parse(response);
-        let pdf = $('<iframe id="printPdf"/>');
-        pdf.attr('src', response.pdfpath);
-        pdf.hide();
-        $('body').append(pdf);
-        pdf[0].contentWindow.focus();
-        pdf[0].contentWindow.print();
+        let printer = $('<iframe/>');
+        printer.attr('src', response.path);
+        printer.hide();
+        $('body').append(printer);
+        printer[0].contentWindow.focus();
+        printer[0].contentWindow.print();
     });
 });
